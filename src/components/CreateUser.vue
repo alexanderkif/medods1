@@ -254,16 +254,16 @@ export default {
     lastname: {
       required,
       minLength: minLength(2),
-      customAlpha: val => /^[а-яё,a-z]*$/i.test(val),
+      customAlpha: val => /^[а-яёa-z]*$/i.test(val),
     },
     firstname: {
       required,
       minLength: minLength(2),
-      customAlpha: val => /^[а-яё,a-z]*$/i.test(val),
+      customAlpha: val => /^[а-яёa-z]*$/i.test(val),
 		},
 		middlename: {
       minLength: minLength(2),
-			customAlpha: val => /^[а-яё,a-z]*$/i.test(val)
+			customAlpha: val => /^[а-яёa-z]*$/i.test(val)
 		},
 		birthDate: {
       required,
@@ -283,20 +283,20 @@ export default {
     },
     country: {
       minLength: minLength(2),
-      customAlpha: val => /^[а-яё,a-z]*$/i.test(val)
+      customAlpha: val => /^[а-яёa-z]*$/i.test(val)
     },
     stateName: {
       minLength: minLength(2),
-      customAlpha: val => /^[а-яё,a-z]*$/i.test(val)
+      customAlpha: val => /^[а-яёa-z]*$/i.test(val)
     },
     sity: {
       required,
       minLength: minLength(2),
-      customAlpha: val => /^[а-яё,a-z]*$/i.test(val)
+      customAlpha: val => /^[а-яёa-z]*$/i.test(val)
     },
     street: {
       minLength: minLength(2),
-      customAlpha: val => /^[а-яё,a-z]*$/i.test(val)
+      customAlpha: val => /^[а-яёa-z]*$/i.test(val)
     },
     building: {
       numbers: val => /^[0-9]*$/i.test(val),
@@ -314,7 +314,7 @@ export default {
 		},
     docCreator: {
       minLength: minLength(2),
-      customAlphaSpace: val => /^[а-яё,a-z,\s]*$/i.test(val)
+      customAlphaSpace: val => /^[а-яёa-z\s]*$/i.test(val)
 		},
 		docDate: {
       required,
