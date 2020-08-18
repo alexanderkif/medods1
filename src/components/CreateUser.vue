@@ -23,11 +23,11 @@
 				:values="clients" :mult="true" />
 			<div class="row-item">
 				<label class="row-item__label">Пол</label>
-				<input class="radio" type="radio" value="male" v-model="gender">
-				<label for="one">Мужской</label>
+				<input class="row-item__radio" id="male" type="radio" value="male" v-model="gender">
+				<label for="male">Мужской</label>
 				<br>
-				<input class="radio" type="radio" value="female" v-model="gender">
-				<label for="two">Женский</label>
+				<input class="row-item__radio" id="fem" type="radio" value="female" v-model="gender">
+				<label for="fem">Женский</label>
 			</div>
 			<div class="row-item">
 				<input class="checkbox" type="checkbox" v-model="sendSMS">
@@ -61,7 +61,7 @@
 
 		<div class="row">
 			<p class="typo__p" v-if="submitStatus === 'OK'">Пользователь успешно создан!</p>
-			<p class="typo__p row-item__group_error" v-if="submitStatus === 'ERROR'">Пожалуйста заполните обязательные поля.</p>
+			<p class="typo__p typo__p_error" v-if="submitStatus === 'ERROR'">Пожалуйста заполните обязательные поля.</p>
 			<p class="typo__p" v-if="submitStatus === 'PENDING'">Отправляем...</p>
 		</div>
 
@@ -306,6 +306,13 @@ body
 
 .typo__p
 	margin: 0 auto
+
+	&_error
+      color: $error-color
+      animation-name: shakeError
+      animation-fill-mode: forwards
+      animation-duration: .6s
+      animation-timing-function: ease-in-out
 
 @keyframes shakeError
   0%
